@@ -36,11 +36,10 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 
 ## To-do
 1. Rewrite the backtest
-2. Extend to include DOW and NASDAQ and ^GSPTSE in benchmark
+2. Extend to include DOW and NASDAQ in benchmark
 3. Change the watchlist to include more stocks in different markets
 
-
 ## Disclaimer
-
-
-# stock-screener
+- DO NOT use the result provided by the software 'solely' to make your trading decisions.
+- Always backtest and analyze the stocks manually before you trade.
+- The Author and the software will not be held liable for your losses.
