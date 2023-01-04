@@ -23,7 +23,7 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 
 ## How to run the program
 
-1. To trigger alpha vantage version, run the below
+1. Run the below
 
 ```
   python3 vcp_stock_screener.py 
