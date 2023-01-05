@@ -7,22 +7,23 @@ import datetime as dt
 import pandas as pd
 import os
 
-def download_yf_data(ticker, start, end):
+def download_yf_data(market,ticker, start, end):
     # df = web.DataReader(ticker, 'yahoo', start, end)
+    print(f"**ticker:{ticker}")
     df = pdr.get_data_yahoo(ticker, start, end)
     if not os.path.exists(f'stock_data'):
         os.makedirs("stock_data")
-    df.to_csv(f'stock_data/{ticker}.csv')
+    df.to_csv(f'stock_data/{market}/{ticker}.csv')
 
-def download_1year_data_by_tickers(tickers):
+def download_1year_data_by_tickers(market,tickers):
     start = dt.datetime.now() - dt.timedelta(days=365)
     end = dt.datetime.now()
-    download_yf_data(tickers, start, end)
+    download_yf_data(market,tickers, start, end)
 
-def download_1year_data(ticker):
+def download_1year_data(market,ticker):
     start = dt.datetime.now() - dt.timedelta(days=365)
     end = dt.datetime.now()
-    download_yf_data(ticker, start, end)
+    download_yf_data(market, ticker, start, end)
 
 def find_tickers_by_benchmark(benchmark_ticker):
     if (benchmark_ticker == '^HSI'):
@@ -37,12 +38,24 @@ def find_tickers_by_benchmark(benchmark_ticker):
     return benchmark_tickers
 
 def tickers_hsi():
-    ticker_df = pd.read_csv("data/hsi_tickers.csv")
+    ticker_df = pd.read_csv("data/hk/benchmark_tickers.csv")
     tickers = ticker_df['代號'].values.tolist()
     return tickers
 
 def tickers_gsptse():
-    ticker_df = pd.read_csv("data/gsptse_tickers.csv")
+    ticker_df = pd.read_csv("data/ca/benchmark_tickers.csv")
     tickers = ticker_df['Ticker'].values.tolist()
     print(tickers)
     return tickers
+
+def tickers_us():
+    benchmark_tickers = []
+    benchmark_tickers.extend(si.tickers_sp500())
+    benchmark_tickers.extend(si.tickers_dow())
+    benchmark_tickers.extend(si.tickers_nasdaq())
+    benchmark_tickers = list(dict.fromkeys(benchmark_tickers))
+
+    df = pd.DataFrame(benchmark_tickers, columns=["Ticker"])
+    df.to_csv('data/us/vcp_watchlist.csv', index=False)
+
+tickers_us()

@@ -36,8 +36,8 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 
 ## To-do
 1. Rewrite the backtest
-2. Extend to include DOW and NASDAQ in benchmark
-3. Change the watchlist to include more stocks in different markets
+2. Change the watchlist to include more stocks in different markets
+3. Migrate to DB instead of rely on yfinance data
 
 ## Disclaimer
 - DO NOT use the result provided by the software 'solely' to make your trading decisions.
