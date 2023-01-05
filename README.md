@@ -18,8 +18,8 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 ```
 
 2. Create a sub-folders.  
- - "data" to store the watchlist and tickers that cannot be found using api
- - "output" to store the 
+ - "data" to store the watchlist and tickers that cannot be found using yahoo_fin.stock_info API
+ - "output" to store the stocks which fulfill the VCP patterns
 
 ## How to run the program
 
