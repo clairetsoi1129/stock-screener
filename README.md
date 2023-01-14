@@ -9,11 +9,13 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 1. Install the below package by following commands
 
 ```
-  pip3 install pandas yfinance pandas-datareader yahoo_fin
-  pip3 install scipy # for calculate slop
-  pip3 install plotly # for plot graph
-  pip3 install tqdm # show progress bar when running
-  pip3 install futures # concurrent programming
+  python3 -m venv env
+  source env/bin/activate
+  python3 -m pip install pandas yfinance pandas-datareader yahoo_fin
+  python3 -m pip install scipy # for calculate slop
+  python3 -m pip install plotly # for plot graph
+  python3 -m pip install tqdm # show progress bar when running
+  python3 -m pip install futures # concurrent programming
 
 ```
 
