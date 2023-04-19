@@ -8,15 +8,35 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 
 1. Install the below package by following commands
 
+> setup virtual environment
 ```
   python3 -m venv env
   source env/bin/activate
-  python3 -m pip install pandas yfinance pandas-datareader yahoo_fin
-  python3 -m pip install scipy # for calculate slop
-  python3 -m pip install plotly # for plot graph
-  python3 -m pip install tqdm # show progress bar when running
-  python3 -m pip install futures # concurrent programming
+```
 
+> get stock data from yfinance
+```
+  python3 -m pip install pandas yfinance pandas-datareader yahoo_fin
+```
+
+> calculate slope
+```
+  python3 -m pip install scipy 
+```
+
+> for plot graph
+```
+  python3 -m pip install plotly
+```
+
+> show progress bar when running
+```
+  python3 -m pip install tqdm 
+```
+
+> concurrent programming
+```
+  python3 -m pip install futures 
 ```
 
 2. Create a sub-folders.  
@@ -29,7 +49,6 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
 
 ```
   python3 vcp_stock_screener.py 
-
 ```
 
 2. This program will combine the watchlist stocks with the benchmark stocks to look for the top 30% high performance stocks and see which stocks has Volatility Contraction Pattern (VCP) pattern. 
