@@ -14,7 +14,7 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
   source env/bin/activate
 ```
 
-> get stock data from yfinance
+> get stock data from yfinance and pandas to process data
 ```
   python3 -m pip install pandas yfinance pandas-datareader yahoo_fin
 ```
