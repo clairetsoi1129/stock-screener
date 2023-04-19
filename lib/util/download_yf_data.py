@@ -11,8 +11,8 @@ def download_yf_data(market,ticker, start, end):
     # df = web.DataReader(ticker, 'yahoo', start, end)
     print(f"**ticker:{ticker}")
     df = pdr.get_data_yahoo(ticker, start, end)
-    if not os.path.exists(f'stock_data'):
-        os.makedirs("stock_data")
+    if not os.path.exists(f'stock_data/{market}'):
+        os.makedirs(f'stock_data/{market}')
     df.to_csv(f'stock_data/{market}/{ticker}.csv')
 
 def download_1year_data_by_tickers(market,tickers):
