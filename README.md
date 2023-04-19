@@ -39,10 +39,7 @@ It will go through a list of stocks from benchmark stocks and watchlist stocks t
   python3 -m pip install futures 
 ```
 
-2. Create a sub-folders.  
- - "data" to store the watchlist and tickers that cannot be found using yahoo_fin.stock_info API
- - "output" to store the stocks which fulfill the VCP patterns
-
+2. Update the watchlist in data/<region>/vcp_watchlist.csv to compare the stocks against benchmark, eg. S&P500 for US. Or the program will only use benchmark stocks to find which one has VCP patterns. 
 ## How to run the program
 
 1. Run the below
